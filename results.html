@@ -5,49 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Job Results - ResumeScraper</title>
 
-  <!-- Stylesheets -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><h3 id="urltext">ResumeScraper</h3></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <button
-            class="btn custom-nav-btn dropdown-toggle"
-            id="navbarDropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <button class="btn custom-nav-btn dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bars" id="navigationcolour"></i>
           </button>
-          <div
-            class="dropdown-menu dropdown-menu-right"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="index.html">Home</a>
             <a class="dropdown-item" href="results.html">Results</a>
           </div>
@@ -56,14 +35,11 @@
     </div>
   </nav>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <div class="container mt-5">
     <h2 class="mb-4">Job Listings</h2>
-    <p class="mb-4">
-      Below are the most relevant job listings based on your resume:
-    </p>
+    <p class="mb-4">Below are the most relevant job listings based on your resume:</p>
 
-    <!-- Job Listings -->
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -85,9 +61,12 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS and dependencies -->
+  <!-- JS Libraries -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
 </body>
 </html>
