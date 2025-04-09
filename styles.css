@@ -1,0 +1,104 @@
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  background-color: #007bff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+.navbar .nav-link:hover {
+  color: #e2e6ea !important;
+}
+
+/* Container and Layout Enhancements */
+.container {
+  margin-top: 50px;
+}
+
+/* Form Styling */
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Upload Area Styling */
+.upload-area {
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  background-color: #f8f9fa;
+}
+.upload-area:hover {
+  background-color: #e9f5ff;
+}
+.upload-area.dragover {
+  background-color: #d0e8ff;
+  border-color: #0056b3;
+}
+.upload-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Checkbox and Form Label Styles */
+.form-check-label {
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Headings Styling */
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Job Listings (List Group) Styling */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+.list-group-item:last-child {
+  border-bottom: none;
+}
+.list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Additional Margin and Padding */
+.mt-5 {
+  margin-top: 3rem !important;
+}
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}

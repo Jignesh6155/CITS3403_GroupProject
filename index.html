@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResumeScraper</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  >
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ResumeScraper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="results.html">Results</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container mt-5">
+    <h1 class="text-center">Welcome to ResumeScraper</h1>
+    <p class="lead text-center">
+      Upload your resume and select job preferences to find the most relevant job listings.
+    </p>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
+        <form action="results.html" method="post" enctype="multipart/form-data">
+          <!-- Custom Upload Area -->
+          <div class="form-group">
+            <label for="resume">Upload Your Resume</label>
+            <div class="upload-area" id="upload-area">
+              <input type="file" id="resume" name="resume" required hidden>
+              <span class="upload-text">Drag &amp; drop your resume here or click to select</span>
+            </div>
+          </div>
+          
+          <!-- Keyword/Preferences Checkboxes -->
+          <div class="form-group">
+            <label>Select Job Preferences:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gradJobs" name="preferences[]" value="gradJobs">
+              <label class="form-check-label" for="gradJobs">Graduate Jobs</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="fullTimeEmployment" name="preferences[]" value="fullTimeEmployment">
+              <label class="form-check-label" for="fullTimeEmployment">Full-Time Employment</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="internships" name="preferences[]" value="internships">
+              <label class="form-check-label" for="internships">Internships</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-3">Search Jobs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JS for Upload Area -->
+  <script>
+    // Trigger file input on click anywhere in the upload area
+    document.getElementById('upload-area').addEventListener('click', function() {
+      document.getElementById('resume').click();
+    });
+
+    // Add visual feedback for drag events
+    const uploadArea = document.getElementById('upload-area');
+    uploadArea.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      uploadArea.classList.add('dragover');
+    });
+    uploadArea.addEventListener('dragleave', function() {
+      uploadArea.classList.remove('dragover');
+    });
+    uploadArea.addEventListener('drop', function(e) {
+      e.preventDefault();
+      document.getElementById('resume').files = e.dataTransfer.files;
+      uploadArea.classList.remove('dragover');
+      // Optional: Update the text to show selected file name(s)
+      if (e.dataTransfer.files.length > 0) {
+        uploadArea.querySelector('.upload-text').textContent = 'File selected: ' + e.dataTransfer.files[0].name;
+      }
+    });
+  </script>
+</body>
+</html>
