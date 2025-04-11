@@ -43,6 +43,8 @@
     <div class="row justify-content-center mt-4">
       <div class="col-md-8">
         <form action="results.html" method="post" enctype="multipart/form-data">
+
+          <!-- Resume Upload -->
           <div class="form-group">
             <label for="resume">Upload Your Resume</label>
             <div class="upload-area" id="upload-area">
@@ -50,7 +52,7 @@
               <span class="upload-text">Drag &amp; drop your resume here or click to select</span>
             </div>
           </div>
-
+          <!-- Job Preferences -->
           <div class="form-group">
             <label>Select Job Preferences:</label>
             <div class="form-check">
@@ -67,6 +69,13 @@
             </div>
           </div>
 
+          <!-- Company (Optional) -->
+          <div class="form-group">
+            <label for="company">Specify Company (Optional)</label>
+            <input type="text" class="form-control" id="company" name="company" placeholder="e.g. Google" />
+          </div>
+
+          <!-- Submit Button -->
           <button type="submit" class="btn btn-primary mt-3">Search Jobs</button>
         </form>
       </div>
