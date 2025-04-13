@@ -34,5 +34,5 @@ def results():
         'company': company,
         'filename': resume_file.filename if resume_file.filename != '' else None
     }
-    
+    #
     return render_template('results.html', data=data)
