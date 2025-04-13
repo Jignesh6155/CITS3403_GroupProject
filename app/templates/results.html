@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Job Results - ResumeScraper</title>
-
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -18,7 +17,7 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+  
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
@@ -27,19 +26,36 @@
             <i class="fas fa-bars" id="navigationcolour"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="index.html">Home</a>
-            <a class="dropdown-item" href="results.html">Results</a>
+            <a class="dropdown-item" href="/">Home</a>
+            <a class="dropdown-item" href="/results">Results</a>
           </div>
         </li>
       </ul>
     </div>
   </nav>
-
+  
   <!-- Main Content -->
   <div class="container mt-5">
     <h2 class="mb-4">Job Listings</h2>
     <p class="mb-4">Below are the most relevant job listings based on your resume:</p>
-
+  
+    <!-- Display uploaded details -->
+    <div class="mb-4">
+      {% if data.filename %}
+        <p><strong>Uploaded File:</strong> {{ data.filename }}</p>
+      {% else %}
+        <p><strong>No file was uploaded.</strong></p>
+      {% endif %}
+      <p>
+        <strong>Job Preferences Selected:</strong>
+        {{ data.preferences | join(', ') if data.preferences else 'None' }}
+      </p>
+      <p>
+        <strong>Company Specified:</strong> {{ data.company if data.company else 'None' }}
+      </p>
+    </div>
+  
+    <!-- Sample Job Listings -->
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -49,7 +65,6 @@
         <p class="mb-1">A brief description of the job listing goes here. This is a summary preview.</p>
         <small>Company Name</small>
       </a>
-
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">Job Title 2</h5>
@@ -60,13 +75,12 @@
       </a>
     </div>
   </div>
-
+  
   <!-- JS Libraries -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
   <!-- Custom Script -->
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

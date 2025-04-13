@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ResumeScraper</title>
-
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -27,8 +26,8 @@
             <i class="fas fa-bars" id="navigationcolour"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="index.html">Home</a>
-            <a class="dropdown-item" href="results.html">Results</a>
+            <a class="dropdown-item" href="/">Home</a>
+            <a class="dropdown-item" href="/results">Results</a>
           </div>
         </li>
       </ul>
@@ -42,8 +41,8 @@
 
     <div class="row justify-content-center mt-4">
       <div class="col-md-8">
-        <form action="results.html" method="post" enctype="multipart/form-data">
-
+        <!-- Updated action to point to Flask route -->
+        <form action="/results" method="post" enctype="multipart/form-data">
           <!-- Resume Upload -->
           <div class="form-group">
             <label for="resume">Upload Your Resume</label>
@@ -52,6 +51,7 @@
               <span class="upload-text">Drag &amp; drop your resume here or click to select</span>
             </div>
           </div>
+          
           <!-- Job Preferences -->
           <div class="form-group">
             <label>Select Job Preferences:</label>
@@ -86,8 +86,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
   <!-- Custom Script -->
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
